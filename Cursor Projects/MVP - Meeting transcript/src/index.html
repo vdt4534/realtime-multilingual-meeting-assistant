@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Assistant MVP</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Meeting Assistant MVP</h1>
+            <div class="language-pair">
+                <span class="lang english">English</span>
+                <span class="separator">↔</span>
+                <span class="lang japanese">日本語</span>
+            </div>
+        </header>
+
+        <div class="controls">
+            <div class="setup-section">
+                <div class="microphone-section">
+                    <label for="microphone-select">Microphone:</label>
+                    <select id="microphone-select">
+                        <option value="">Select microphone...</option>
+                    </select>
+                </div>
+                
+                <div class="api-section">
+                    <label for="api-key">Google API Key:</label>
+                    <input type="password" id="api-key" placeholder="Enter your Google API key">
+                    <small>Required for transcription and translation</small>
+                </div>
+            </div>
+
+            <div class="recording-controls">
+                <button id="start-btn" class="btn primary" disabled>Start Session</button>
+                <button id="stop-btn" class="btn secondary" disabled>Stop Session</button>
+                <div class="status">
+                    <span id="status-text">Ready to start</span>
+                    <div id="audio-level" class="audio-level">
+                        <div class="level-bar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="conversation-container">
+            <div class="conversation" id="conversation">
+                <div class="welcome-message">
+                    <h3>Welcome to Meeting Assistant MVP!</h3>
+                    <p>1. Select your microphone</p>
+                    <p>2. Enter your Google API key</p>
+                    <p>3. Click "Start Session" to begin real-time transcription and translation</p>
+                    <p>4. Speak naturally - transcription will appear in real-time with translations</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <button id="export-btn" class="btn secondary" disabled>Export Session</button>
+            <button id="clear-btn" class="btn secondary">Clear</button>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
